@@ -25,3 +25,16 @@ if (LOG) console.log("function five's datatype is", typeof FunctionFive)
 
 let FunctionSix = (function() { return {}})();
 if (LOG) console.log("function six's datatype is", typeof FunctionSix)
+
+let buttons = document.querySelectorAll('button');
+for (let i = 0; i < buttons.length; i ++) {
+	buttons[i].addEventListener('click', e => {
+		let sib = e.target.nextElementSibling;
+		if (sib.classList.contains('show')) {
+			sib.classList.remove('show')
+		} else {
+			sib.classList.add('show')
+		}
+		
+	})
+}
